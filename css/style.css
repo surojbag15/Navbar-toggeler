@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-color: #7cc343;
+  --button-color: #252525;
+  --text-white: #fff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.container {
+  max-width: 1750px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+
+/* Navbar CSS */
+
+header {
+  padding: 18px 0 17px;
+}
+
+.navbar-collapsed,
+nav,
+.navbar-collapsed > ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-collapsed {
+  flex-grow: 1;
+}
+
+.primary-button {
+  padding: 16px 14px 15px 15px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  color: var(--text-white);
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-collapsed > ul {
+  margin: 0 auto;
+}
+
+.nav-items:not(:last-child) {
+  margin-right: 80px;
+}
+
+.nav-links {
+  color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-links:hover,
+.nav-links.active {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.menu-btn {
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease;
+}
+.menu-btn > span {
+  width: 30px;
+  height: 3px;
+  background: black;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.menu-btn::before,
+.menu-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: black;
+  transition: all 0.3s ease;
+}
+
+.menu-btn::before {
+  bottom: -7px;
+}
+
+.menu-btn::after {
+  bottom: 7px;
+}
+
+.menu-btn.menu-active > span {
+  opacity: 0;
+}
+
+.menu-btn.menu-active::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+.menu-btn.menu-active::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 1113px) {
+  .menu-btn {
+    display: block;
+  }
+  .navbar-collapsed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    background: rgb(210, 255, 200);
+    flex-direction: column;
+    display: none;
+    padding-top: 95px;
+  }
+  .menu-btn {
+    display: flex;
+    position: relative;
+    z-index: 99;
+  }
+  .navbar-collapsed ul {
+    flex-direction: column;
+    justify-self: center;
+    text-align: center;
+  }
+  .nav-items:not(:last-child) {
+    margin-right: 0;
+  }
+  .nav-items {
+    margin: 10px 0;
+  }
+
+  .nav-button {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
